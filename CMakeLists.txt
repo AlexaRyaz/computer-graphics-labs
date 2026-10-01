@@ -23,7 +23,8 @@ else()
 endif()
 
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD_REQUIRED TRUE CXX_STANDARD 20)
-
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+target_link_libraries(${PROJECT_NAME} PRIVATE Vulkan::Vulkan)
 FetchContent_Declare(
 	glfw
 	GIT_REPOSITORY https://github.com/glfw/glfw.git
